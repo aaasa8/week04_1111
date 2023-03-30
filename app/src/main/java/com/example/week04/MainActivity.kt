@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         btnHello.setOnClickListener {
             val msg = name.getText().toString()
-            val msg2 = name.getText().toString()
+            val msg2 = phone.getText().toString()
+            textView.setText(msg)
         }
 
         btnExit.setOnClickListener {
