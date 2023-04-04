@@ -10,20 +10,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_linear)
 
-        val name = findViewById<EditText>(R.id.etName)
+        val name = findViewById<EditText>(R.id.etName) //xml파일 힌트 속성으로 고치기
         val phone = findViewById<EditText>(R.id.etPhone)
         val btnHello = findViewById<Button>(R.id.btnHello)
         val btnExit = findViewById<Button>(R.id.btnExit)
 
         btnHello.setOnClickListener {
-            val msg = name.getText().toString()
+            val msg1 = name.getText().toString()
             val msg2 = phone.getText().toString()
-            textView.setText(msg)
+            val msg = "안녕하세요, 저는 " + msg1 + "입니다. 전화번호는 " + msg2 + "입니다."
+            Toast.makeText(this, msg, Toast.LENGHTH_SHORT).show()
         }
 
-        btnExit.setOnClickListener {
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                finish()
+            }
 
-        }
+        })
 
     }
 }
